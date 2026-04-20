@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eco Fashion — Fashion zonder footprint</title>
+  <title>Eco Fashion - Fashion zonder footprint</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oi&family=Poiret+One&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -14,11 +14,12 @@
 <nav>
   <a href="#" class="nav-logo">Eco <span>Fashion</span></a>
   <ul class="nav-links">
+    <li><a href="#concept">Concept</a></li>
     <li><a href="#checker">Checker</a></li>
     <li><a href="#brands">Merken</a></li>
     <li><a href="#community">Community</a></li>
     <li><a href="#impact">Impact</a></li>
-    <li><a href="#tips">Tips</a></li>
+    <li><a href="#quiz">Quiz</a></li>
     <li><a href="#checker" class="nav-cta">Check je outfit</a></li>
   </ul>
   <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
@@ -26,11 +27,12 @@
   </button>
 </nav>
 <div class="nav-mobile" id="navMobile">
+  <a href="#concept" onclick="toggleMenu()">Concept</a>
   <a href="#checker" onclick="toggleMenu()">Checker</a>
   <a href="#brands" onclick="toggleMenu()">Merken</a>
   <a href="#community" onclick="toggleMenu()">Community</a>
   <a href="#impact" onclick="toggleMenu()">Impact</a>
-  <a href="#tips" onclick="toggleMenu()">Tips</a>
+  <a href="#quiz" onclick="toggleMenu()">Quiz</a>
   <a href="#checker" class="nav-cta" onclick="toggleMenu()">Check je outfit</a>
 </div>
 
@@ -72,9 +74,7 @@
     </div>
   </div>
   <div class="hero-right">
-    <div class="hero-banner-placeholder">
-      <img src="MD-Logo.png" alt="hero banner">
-    </div>
+    <img src="mud-jeans-1.png" alt="Duurzame denim - MUD Jeans Earth Day campagne" class="hero-img" />
   </div>
 </section>
 
@@ -90,6 +90,39 @@
   <div style="background: #b85a30;"></div>
   <div style="background: #a896b4;"></div>
 </div>
+
+<section id="concept">
+  <div class="concept-grid">
+    <div class="concept-intro reveal">
+      <p class="section-tag">Over ons concept</p>
+      <h2 class="section-title">Fashion<br>zonder <em>footprint</em></h2>
+      <p class="concept-desc">Eco Fashion is een interactief project van Sint Lucas studenten voor de MD-Week 2026. Wij kozen het thema <strong>Duurzame Fashion</strong> en vertaalden dat naar een digitale beleving die jou bewust maakt van de impact van kleding.</p>
+    </div>
+    <div class="concept-cards">
+      <div class="concept-card reveal">
+        <div class="concept-card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
+        </div>
+        <h3>Naam</h3>
+        <p>Eco Fashion: een interactieve website die je helpt duurzamere kledingkeuzes te maken.</p>
+      </div>
+      <div class="concept-card reveal">
+        <div class="concept-card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg>
+        </div>
+        <h3>Doel</h3>
+        <p>Studenten bewust maken van de milieu-impact van kleding en hen aanzetten tot duurzamere keuzes.</p>
+      </div>
+      <div class="concept-card reveal">
+        <div class="concept-card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+        </div>
+        <h3>Opbrengst</h3>
+        <p>Meer inzicht in merken, materialen en keurmerken, zodat je kleding koopt die je écht draagt én die de planeet spaart.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section id="checker">
   <div class="reveal">
@@ -257,7 +290,7 @@
     <div class="timeline">
       <div class="timeline-item">
         <span class="timeline-year">1990s</span>
-        <span class="timeline-desc">Fast fashion merken zoals <strong>H&M en Zara</strong> beginnen met wekelijkse collecties — veel meer dan de traditionele 2 per jaar.</span>
+        <span class="timeline-desc">Fast fashion merken zoals <strong>H&M en Zara</strong> beginnen met wekelijkse collecties, veel meer dan de traditionele 2 per jaar.</span>
       </div>
       <div class="timeline-item">
         <span class="timeline-year">2000s</span>
@@ -283,7 +316,7 @@
   <p class="section-tag reveal">Duurzame Gids</p>
   <h2 class="section-title reveal">Herken <em>duurzame</em><br>kleding</h2>
   <p class="tips-desc reveal">
-    Met deze zes tips herken je duurzame kleding en maak je bewustere keuzes — zonder je stijl in te leveren.
+    Met deze zes tips herken je duurzame kleding en maak je bewustere keuzes, zonder je stijl in te leveren.
   </p>
   <div class="tips-grid reveal">
     <div class="tip-card">
@@ -325,6 +358,58 @@
   </div>
 </section>
 
+<section id="keurmerken">
+  <p class="section-tag reveal">Officiële Labels</p>
+  <h2 class="section-title reveal">Herken de <em>keurmerken</em></h2>
+  <p class="tips-desc reveal">Deze certificeringen garanderen dat kleding aan strenge eisen voldoet op het gebied van milieu en arbeidsomstandigheden.</p>
+  <div class="keurmerken-grid reveal">
+    <div class="keurmerk-card">
+      <div class="keurmerk-badge" style="background:#3a7a3a;">GOTS</div>
+      <h3>Global Organic Textile Standard</h3>
+      <p>Garandeert dat textiel biologisch geteeld is én eerlijk geproduceerd, van het veld tot het eindproduct.</p>
+    </div>
+    <div class="keurmerk-card">
+      <div class="keurmerk-badge" style="background:#2e6a9a;">FWF</div>
+      <h3>Fair Wear Foundation</h3>
+      <p>Controleert of arbeiders in de kledingindustrie eerlijk betaald worden en in veilige omstandigheden werken.</p>
+    </div>
+    <div class="keurmerk-card">
+      <div class="keurmerk-badge" style="background:#7a3a7a;">OTX</div>
+      <h3>OEKO-TEX Standard 100</h3>
+      <p>Garandeert dat elk onderdeel van een kledingstuk getest is op schadelijke stoffen, veilig voor huid en milieu.</p>
+    </div>
+    <div class="keurmerk-card">
+      <div class="keurmerk-badge" style="background:#6a7840;">ECO</div>
+      <h3>EU Ecolabel</h3>
+      <p>Het officiële Europese milieukeurmerk voor producten die minder schadelijk zijn voor het milieu gedurende hun hele levenscyclus.</p>
+    </div>
+  </div>
+</section>
+
+<section id="quiz">
+  <div class="quiz-inner">
+    <div class="reveal">
+      <p class="section-tag" style="color:rgba(245,240,232,0.5);">Interactieve Quiz</p>
+      <h2 class="section-title" style="color:var(--cream);">Test je <em>modekennis</em></h2>
+      <p style="color:rgba(245,240,232,0.55); font-size:1rem; max-width:520px; margin-bottom:40px;">5 vragen over fast fashion en duurzame keuzes. Hoe bewust ben jij al?</p>
+    </div>
+    <div class="quiz-box reveal" id="quizBox">
+      <div class="quiz-progress">
+        <div class="quiz-progress-bar" id="quizProgressBar"></div>
+      </div>
+      <p class="quiz-counter" id="quizCounter">Vraag 1 van 5</p>
+      <p class="quiz-question" id="quizQuestion"></p>
+      <div class="quiz-options" id="quizOptions"></div>
+      <div class="quiz-result" id="quizResult" style="display:none;">
+        <div class="quiz-score-label">Jouw score</div>
+        <div class="quiz-score-num" id="quizScoreNum"></div>
+        <p class="quiz-score-msg" id="quizScoreMsg"></p>
+        <button class="btn-check" onclick="restartQuiz()">Probeer opnieuw →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div class="palette-strip">
   <div style="background: #3e2820;"></div>
   <div style="background: #e8e4dc;"></div>
@@ -338,37 +423,112 @@
   <div style="background: #e8e4dc;"></div>
 </div>
 
+<section id="kleurentrend">
+  <p class="section-tag reveal">Website Kleurenpalet</p>
+  <h2 class="section-title reveal">De kleuren van <em>deze website</em></h2>
+  <p class="tips-desc reveal">Dit zijn de kleuren die gebruikt zijn in het ontwerp van deze website, gebaseerd op het Spring/Summer 2026 palet.</p>
+  <div class="palette-swatches reveal">
+    <div class="swatch-group">
+      <p class="swatch-group-label">Hoofdkleuren</p>
+      <div class="swatches-row">
+        <div class="swatch" style="background:#8a9a3c;"><span>Acacia</span></div>
+        <div class="swatch" style="background:#2e7a9a;"><span>Marina</span></div>
+        <div class="swatch" style="background:#e8865a;"><span>Muskmelon</span></div>
+        <div class="swatch" style="background:#2a3d2a;color:#efe8d8;"><span>Alexandria</span></div>
+        <div class="swatch" style="background:#c4503a;"><span>Lava Folk</span></div>
+        <div class="swatch" style="background:#d4a090;color:#3e2820;"><span>Tea Rose</span></div>
+        <div class="swatch" style="background:#c4857a;"><span>Dusty Rose</span></div>
+        <div class="swatch" style="background:#b85a30;"><span>Burnt Sienna</span></div>
+        <div class="swatch" style="background:#a896b4;color:#3e2820;"><span>Burnished Lilac</span></div>
+      </div>
+    </div>
+    <div class="swatch-group">
+      <p class="swatch-group-label">Klassiek palet</p>
+      <div class="swatches-row">
+        <div class="swatch" style="background:#3e2820;"><span>Coffee</span></div>
+        <div class="swatch" style="background:#e8e4dc;color:#3e2820;"><span>White Onyx</span></div>
+        <div class="swatch" style="background:#e8865a;"><span>Muskmelon</span></div>
+        <div class="swatch" style="background:#efe8d8;color:#3e2820;"><span>Angora</span></div>
+        <div class="swatch" style="background:#6a7840;"><span>Sycamore</span></div>
+        <div class="swatch" style="background:#8a9e7a;color:#3e2820;"><span>Sage Green</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="merken-spotlight">
+  <p class="section-tag reveal">Merk Spotlight</p>
+  <h2 class="section-title reveal"><em>MUD Jeans</em> - circulair denim</h2>
+  <p class="tips-desc reveal">MUD Jeans is een van de meest duurzame denimmerken ter wereld. Hun circulaire model maakt het mogelijk jeans te leasen én terug te geven voor recycling.</p>
+  <div class="spotlight-imgs reveal">
+    <img src="mud-jeans-1.png" alt="MUD Jeans website" class="lightbox-trigger" />
+    <img src="mud-jeans-2.png" alt="MUD Jeans missie" class="lightbox-trigger" />
+  </div>
+</section>
+
+<section id="posters">
+  <p class="section-tag reveal">Onze Posters</p>
+  <h2 class="section-title reveal">De <em>boodschap</em><br>in beeld</h2>
+  <div class="posters-grid reveal">
+    <div class="poster-card">
+      <img src="poster-eco-brands.png" alt="Eco friendly clothing brands poster" class="lightbox-trigger" />
+      <p class="poster-caption">Eco-vriendelijke kledingmerken</p>
+    </div>
+    <div class="poster-card">
+      <img src="poster-shein.png" alt="Stop fast fashion - SHEIN poster" class="lightbox-trigger" />
+      <p class="poster-caption">Stop fast fashion</p>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div>
     <div class="footer-brand">Eco <span>Fashion</span></div>
-    <p class="footer-tagline">Fashion zonder footprint. Eco Fashion is een project van Sint Lucas studenten voor de MD-Week 2026 — Duurzame Fashion.</p>
+    <p class="footer-tagline">Fashion zonder footprint. Eco Fashion is een project van Sint Lucas studenten voor de MD-Week 2026, Duurzame Fashion.</p>
   </div>
   <div>
     <p class="footer-col-title">Navigatie</p>
     <ul class="footer-links">
+      <li><a href="#concept">Over het concept</a></li>
       <li><a href="#checker">Outfit Checker</a></li>
       <li><a href="#brands">Merk Database</a></li>
       <li><a href="#community">Community</a></li>
       <li><a href="#impact">Fast Fashion Impact</a></li>
+      <li><a href="#keurmerken">Keurmerken</a></li>
+      <li><a href="#quiz">Modekennis Quiz</a></li>
       <li><a href="#tips">Duurzame Tips</a></li>
     </ul>
   </div>
   <div>
-    <p class="footer-col-title">Kleurentrend</p>
-    <ul class="footer-links">
-      <li><a href="#">Spring/Summer 2026</a></li>
-      <li><a href="#">Acacia · Marina · Muskmelon</a></li>
-      <li><a href="#">Dusty Rose · Sage Green</a></li>
-      <li><a href="#">Burnished Lilac · Angora</a></li>
-    </ul>
+    <p class="footer-col-title">Website Kleuren</p>
+    <a href="#kleurentrend" class="footer-palette">
+      <span style="background:#8a9a3c;" title="Acacia"></span>
+      <span style="background:#2e7a9a;" title="Marina"></span>
+      <span style="background:#e8865a;" title="Muskmelon"></span>
+      <span style="background:#2a3d2a;" title="Alexandria"></span>
+      <span style="background:#c4503a;" title="Lava Folk"></span>
+      <span style="background:#d4a090;" title="Tea Rose"></span>
+      <span style="background:#c4857a;" title="Dusty Rose"></span>
+      <span style="background:#b85a30;" title="Burnt Sienna"></span>
+      <span style="background:#a896b4;" title="Burnished Lilac"></span>
+    </a>
+    <a href="#kleurentrend" class="footer-palette-link">Bekijk het volledige palet →</a>
   </div>
 </footer>
 <div class="footer-bottom">
-  <p>© 2026 Eco Fashion — MD-Week Project Sint Lucas</p>
+  <p>© 2026 Eco Fashion - MD-Week Project Sint Lucas</p>
   <p>Duurzame Fashion · Interactieve Beleving</p>
+  <a href="https://mexydigital.nl" target="_blank" class="footer-credit">
+    Powered by <span>Mexy Digital</span>
+  </a>
 </div>
 
 <div class="toast" id="toast"></div>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="" onclick="event.stopPropagation()" />
+</div>
 
 <script src="script.js"></script>
 </body>

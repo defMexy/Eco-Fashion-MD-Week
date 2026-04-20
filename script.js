@@ -1,3 +1,21 @@
+document.querySelectorAll('.lightbox-trigger').forEach(img => {
+    img.addEventListener('click', () => {
+        document.getElementById('lightboxImg').src = img.src;
+        document.getElementById('lightboxImg').alt = img.alt;
+        document.getElementById('lightbox').classList.add('open');
+        document.body.style.overflow = 'hidden';
+    });
+});
+
+function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightbox();
+});
+
 document.querySelectorAll('.form-chips').forEach(group => {
     group.querySelectorAll('.chip').forEach(chip => {
         chip.addEventListener('click', () => {
@@ -66,6 +84,16 @@ const brands = [
     { name: 'Organic Basics', cat: 'Basics', score: 9.4, badge: 'badge-great', label: 'Top', color: '#8a9a3c' },
     { name: 'Patagonia', cat: 'Outdoor', score: 9.1, badge: 'badge-great', label: 'Top', color: '#8a9a3c' },
     { name: 'Mud Jeans', cat: 'Denim', score: 8.9, badge: 'badge-great', label: 'Top', color: '#8a9a3c' },
+    { name: 'ARMEDANGELS', cat: 'Mode', score: 9.0, badge: 'badge-great', label: 'Top', color: '#8a9a3c' },
+    { name: 'Kuyichi', cat: 'Denim', score: 8.7, badge: 'badge-great', label: 'Top', color: '#8a9a3c' },
+    { name: 'Kings of Indigo', cat: 'Denim', score: 8.5, badge: 'badge-great', label: 'Top', color: '#8a9a3c' },
+    { name: 'Alchemist & Thought', cat: 'Dameskleding', score: 8.4, badge: 'badge-great', label: 'Top', color: '#8a9a3c' },
+    { name: 'Thinking MU', cat: 'Mode', score: 8.3, badge: 'badge-great', label: 'Top', color: '#8a9a3c' },
+    { name: 'Wunderwerk', cat: 'Mode', score: 8.2, badge: 'badge-great', label: 'Top', color: '#8a9a3c' },
+    { name: 'Teym', cat: 'Basics', score: 8.0, badge: 'badge-great', label: 'Top', color: '#8a9a3c' },
+    { name: 'New Optimist', cat: 'Duurzaam', score: 8.1, badge: 'badge-great', label: 'Top', color: '#8a9a3c' },
+    { name: 'Skot', cat: 'Overhemden', score: 7.9, badge: 'badge-great', label: 'Goed', color: '#2e7a9a' },
+    { name: 'Zeeman', cat: 'Basics', score: 6.0, badge: 'badge-ok', label: 'Matig', color: '#b85a30' },
     { name: 'Stella McCartney', cat: 'Luxury', score: 8.8, badge: 'badge-great', label: 'Top', color: '#8a9a3c' },
     { name: 'Nudie Jeans', cat: 'Denim', score: 8.6, badge: 'badge-great', label: 'Top', color: '#8a9a3c' },
     { name: 'Tentree', cat: 'Casual', score: 8.5, badge: 'badge-great', label: 'Top', color: '#8a9a3c' },
@@ -245,3 +273,97 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.1 });
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+const quizData = [
+    {
+        question: 'Hoeveel water is nodig om één katoenen T-shirt te produceren?',
+        options: ['70 liter', '700 liter', '2.700 liter', '7.000 liter'],
+        correct: 2,
+        explanation: '2.700 liter — genoeg drinkwater voor 2,5 jaar voor één persoon.'
+    },
+    {
+        question: 'Welk keurmerk garandeert dat textiel biologisch én eerlijk geproduceerd is?',
+        options: ['OEKO-TEX', 'GOTS', 'ISO 9001', 'CE-markering'],
+        correct: 1,
+        explanation: 'GOTS (Global Organic Textile Standard) controleert het hele productieproces.'
+    },
+    {
+        question: 'Hoeveel procent van de wereldwijde CO₂-uitstoot komt van de mode-industrie?',
+        options: ['2%', '5%', '10%', '20%'],
+        correct: 2,
+        explanation: '10% — meer dan alle internationale vluchten en scheepvaart samen!'
+    },
+    {
+        question: 'Wat is de meest duurzame manier om kleding te kopen?',
+        options: ['Nieuwe collectie kopen bij een duurzaam merk', 'Tweedehands / vintage kopen', 'Fast fashion maar weinig kopen', 'Online bestellen en wat past houden'],
+        correct: 1,
+        explanation: 'Tweedehands kopen gebruikt geen nieuwe grondstoffen, water of transport.'
+    },
+    {
+        question: 'Hoeveel ton kledingafval wordt er wereldwijd per jaar geproduceerd?',
+        options: ['9 miljoen ton', '45 miljoen ton', '92 miljoen ton', '200 miljoen ton'],
+        correct: 2,
+        explanation: '92 miljoen ton — genoeg om elke seconde een vrachtwagen te vullen.'
+    }
+];
+
+let quizCurrent = 0;
+let quizScore = 0;
+let quizAnswered = false;
+
+function renderQuiz() {
+    const q = quizData[quizCurrent];
+    document.getElementById('quizCounter').textContent = `Vraag ${quizCurrent + 1} van ${quizData.length}`;
+    document.getElementById('quizProgressBar').style.width = `${(quizCurrent / quizData.length) * 100}%`;
+    document.getElementById('quizQuestion').textContent = q.question;
+    document.getElementById('quizOptions').innerHTML = q.options.map((opt, i) =>
+        `<button class="quiz-option" onclick="answerQuiz(${i})">${opt}</button>`
+    ).join('');
+    document.getElementById('quizResult').style.display = 'none';
+    quizAnswered = false;
+}
+
+function answerQuiz(index) {
+    if (quizAnswered) return;
+    quizAnswered = true;
+    const q = quizData[quizCurrent];
+    const buttons = document.querySelectorAll('.quiz-option');
+    buttons.forEach(b => b.disabled = true);
+    buttons[q.correct].classList.add('correct');
+    if (index !== q.correct) {
+        buttons[index].classList.add('wrong');
+    } else {
+        quizScore++;
+    }
+    setTimeout(() => {
+        quizCurrent++;
+        if (quizCurrent < quizData.length) {
+            renderQuiz();
+        } else {
+            showQuizResult();
+        }
+    }, 1400);
+}
+
+function showQuizResult() {
+    document.getElementById('quizProgressBar').style.width = '100%';
+    document.getElementById('quizQuestion').textContent = '';
+    document.getElementById('quizOptions').innerHTML = '';
+    document.getElementById('quizCounter').textContent = 'Resultaat';
+    const pct = Math.round((quizScore / quizData.length) * 100);
+    let msg;
+    if (quizScore === 5) msg = 'Perfect! Jij bent een echte duurzame mode-expert. Deel jouw kennis met anderen!';
+    else if (quizScore >= 3) msg = 'Goed bezig! Je weet al veel over duurzame fashion. Lees onze tips om nog bewuster te worden.';
+    else msg = 'Er valt nog wat te leren — maar dat is precies waarom deze website bestaat. Bekijk de tips en probeer het opnieuw!';
+    document.getElementById('quizScoreNum').textContent = `${quizScore}/5`;
+    document.getElementById('quizScoreMsg').textContent = msg;
+    document.getElementById('quizResult').style.display = 'block';
+}
+
+function restartQuiz() {
+    quizCurrent = 0;
+    quizScore = 0;
+    renderQuiz();
+}
+
+renderQuiz();
