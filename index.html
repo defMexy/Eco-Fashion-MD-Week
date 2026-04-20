@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eco Fashion — Fashion zonder footprint</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oi&family=Poiret+One&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Eco <span>Fashion</span></a>
+  <ul class="nav-links">
+    <li><a href="#checker">Checker</a></li>
+    <li><a href="#brands">Merken</a></li>
+    <li><a href="#community">Community</a></li>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#tips">Tips</a></li>
+    <li><a href="#checker" class="nav-cta">Check je outfit</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="navMobile">
+  <a href="#checker" onclick="toggleMenu()">Checker</a>
+  <a href="#brands" onclick="toggleMenu()">Merken</a>
+  <a href="#community" onclick="toggleMenu()">Community</a>
+  <a href="#impact" onclick="toggleMenu()">Impact</a>
+  <a href="#tips" onclick="toggleMenu()">Tips</a>
+  <a href="#checker" class="nav-cta" onclick="toggleMenu()">Check je outfit</a>
+</div>
+
+<section class="hero" id="home">
+  <div class="hero-left">
+    <p class="hero-tag">Fashion zonder footprint · Spring/Summer 2026</p>
+    <h1 class="hero-headline">
+      Is jouw<br>
+      kleding<br>
+      <em>écht</em><br>
+      duurzaam?
+    </h1>
+    <p class="hero-sub">
+      Eco Fashion geeft je inzicht in de duurzaamheid van jouw kleding, helpt je merken te beoordelen en motiveert je om bewustere keuzes te maken.
+    </p>
+    <div class="hero-actions">
+      <a href="#checker" class="btn-primary">Check mijn outfit</a>
+      <a href="#impact" class="btn-secondary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 8v4m0 4h.01"/>
+        </svg>
+        Meer over impact
+      </a>
+    </div>
+    <div class="checker-stats" style="margin-top: 56px;">
+      <div class="checker-stat" style="border-color: rgba(26,21,16,0.1); color: var(--ink);">
+        <div class="checker-stat-num" style="color: var(--muskmelon);">92%</div>
+        <div class="checker-stat-label" style="color: rgba(26,21,16,0.5);">van fast fashion<br>eindigt in de vuilnisbak</div>
+      </div>
+      <div class="checker-stat" style="border-color: rgba(26,21,16,0.1); color: var(--ink);">
+        <div class="checker-stat-num" style="color: var(--sycamore);">2e</div>
+        <div class="checker-stat-label" style="color: rgba(26,21,16,0.5);">meest vervuilende<br>industrie ter wereld</div>
+      </div>
+      <div class="checker-stat" style="border-color: rgba(26,21,16,0.1); color: var(--ink);">
+        <div class="checker-stat-num" style="color: var(--marina);">3×</div>
+        <div class="checker-stat-label" style="color: rgba(26,21,16,0.5);">meer gedragen =<br>3× minder impact</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-banner-placeholder">
+      <img src="MD-Logo.png" alt="hero banner">
+    </div>
+  </div>
+</section>
+
+<div class="palette-strip">
+  <div style="background: #8a9a3c;"></div>
+  <div style="background: #2e7a9a;"></div>
+  <div style="background: #e8865a;"></div>
+  <div style="background: #4a6a8a;"></div>
+  <div style="background: #c4503a;"></div>
+  <div style="background: #c4857a;"></div>
+  <div style="background: #d4a090;"></div>
+  <div style="background: #c45070;"></div>
+  <div style="background: #b85a30;"></div>
+  <div style="background: #a896b4;"></div>
+</div>
+
+<section id="checker">
+  <div class="reveal">
+    <p class="section-tag">Duurzaamheid Check</p>
+    <h2 class="section-title">Check jouw<br><em>kledingstuk</em></h2>
+    <p class="checker-desc">
+      Vul een paar vragen in over jouw kledingstuk en ontdek direct hoe duurzaam het is. Krijg een persoonlijke score en tips om bewustere keuzes te maken.
+    </p>
+    <div class="checker-stats">
+      <div class="checker-stat">
+        <div class="checker-stat-num">2.000+</div>
+        <div class="checker-stat-label">merken<br>geanalyseerd</div>
+      </div>
+      <div class="checker-stat">
+        <div class="checker-stat-num">50k</div>
+        <div class="checker-stat-label">checks<br>gedaan</div>
+      </div>
+      <div class="checker-stat">
+        <div class="checker-stat-num">94%</div>
+        <div class="checker-stat-label">gebruikers<br>kopen bewuster</div>
+      </div>
+    </div>
+  </div>
+  <div class="checker-form reveal">
+    <h3>Beoordeel jouw outfit</h3>
+    <div class="form-group">
+      <label class="form-label">Merk</label>
+      <input type="text" class="form-input" placeholder="bijv. Zara, H&M, Patagonia..." id="brandInput" />
+    </div>
+    <div class="form-group">
+      <label class="form-label">Materiaal</label>
+      <div class="form-chips" id="materialChips">
+        <button class="chip" data-val="3">Katoen</button>
+        <button class="chip" data-val="8">Biologisch katoen</button>
+        <button class="chip" data-val="9">Linnen</button>
+        <button class="chip" data-val="2">Polyester</button>
+        <button class="chip" data-val="1">Viscose</button>
+        <button class="chip" data-val="7">Wol</button>
+        <button class="chip" data-val="6">Gerecycled</button>
+        <button class="chip" data-val="5">Bamboe</button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Hoe vaak draag je het?</label>
+      <select class="form-select" id="wearFreq">
+        <option value="">Selecteer...</option>
+        <option value="1">Zelden (1-2x per jaar)</option>
+        <option value="4">Soms (1x per maand)</option>
+        <option value="7">Regelmatig (1x per week)</option>
+        <option value="9">Heel vaak (meerdere keren per week)</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Productieplaats</label>
+      <div class="form-chips" id="originChips">
+        <button class="chip" data-val="2">Azië (Bangladesh, Vietnam)</button>
+        <button class="chip" data-val="6">Europa (Portugal, Italië)</button>
+        <button class="chip" data-val="8">Nederland / lokaal</button>
+        <button class="chip" data-val="4">Onbekend</button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Certificeringen</label>
+      <div class="form-chips" id="certChips">
+        <button class="chip" data-val="3">GOTS</button>
+        <button class="chip" data-val="2">Fair Trade</button>
+        <button class="chip" data-val="3">OEKO-TEX</button>
+        <button class="chip" data-val="1">B Corp</button>
+        <button class="chip" data-val="0">Geen</button>
+      </div>
+    </div>
+    <button class="btn-check" onclick="checkSustainability()">Bereken duurzaamheidsscore →</button>
+    <div class="result-box" id="resultBox">
+      <div class="result-score-label">Jouw duurzaamheidsscore</div>
+      <div class="result-score" id="resultScore">—</div>
+      <div class="result-bar-track">
+        <div class="result-bar-fill" id="resultBar" style="width: 0%"></div>
+      </div>
+      <p class="result-verdict" id="resultVerdict"></p>
+      <div class="result-tips" id="resultTips"></div>
+    </div>
+  </div>
+</section>
+
+<section id="brands">
+  <div class="brands-inner">
+    <div class="brands-top reveal">
+      <div>
+        <p class="section-tag">Merk Database</p>
+        <h2 class="section-title">Zoek een<br><em>merk</em></h2>
+      </div>
+      <p class="brands-desc">
+        Controleer of jouw favoriete merk duurzaam is. Onze database bevat duizenden merken met scores op gebied van materiaal, arbeidsomstandigheden en milieu-impact.
+      </p>
+    </div>
+    <div class="search-bar reveal">
+      <input type="text" class="search-input" id="brandSearch" placeholder="Zoek een merk... bijv. Nike, H&M, Weekday" oninput="filterBrands()" />
+      <button class="search-btn" onclick="filterBrands()">Zoeken</button>
+    </div>
+    <div class="brands-grid" id="brandsGrid"></div>
+    <div style="text-align: center; margin-top: 24px;">
+      <button class="search-btn" id="loadMoreBtn" onclick="loadMoreBrands()">Laad meer</button>
+    </div>
+  </div>
+</section>
+
+<section id="community">
+  <div>
+    <p class="section-tag reveal">Community Feedback</p>
+    <h2 class="section-title reveal">Geef <em>feedback</em><br>op outfits</h2>
+    <p class="community-desc reveal">
+      Deel jouw mening over outfits van anderen. Geef aan of een look duurzaam aanvoelt, wat je ervan vindt en help de community bewustere keuzes te maken.
+    </p>
+    <div class="outfits-feed" id="outfitsFeed"></div>
+  </div>
+  <div class="feedback-form reveal">
+    <h3>Deel jouw outfit</h3>
+    <div class="form-group">
+      <label class="form-label" style="color:rgba(245,240,232,0.5);">Beschrijf je outfit</label>
+      <textarea class="feedback-textarea" id="outfitDesc" placeholder="bijv. Vintage Levi's jeans van de kringloop + biologisch katoenen t-shirt van Arket..."></textarea>
+    </div>
+    <div class="form-group">
+      <label class="form-label" style="color:rgba(245,240,232,0.5);">Hoe duurzaam voel je je?</label>
+      <div class="rating-stars" id="ratingStars">
+        <span class="star" onclick="setRating(1)"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>
+        <span class="star" onclick="setRating(2)"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>
+        <span class="star" onclick="setRating(3)"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>
+        <span class="star" onclick="setRating(4)"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>
+        <span class="star" onclick="setRating(5)"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label" style="color:rgba(245,240,232,0.5);">Jouw naam</label>
+      <input type="text" class="form-input" id="userName" placeholder="bijv. Emma" />
+    </div>
+    <button class="btn-submit" onclick="submitOutfit()">Deel outfit met community →</button>
+  </div>
+</section>
+
+<section id="impact">
+  <p class="section-tag reveal">Fast Fashion Impact</p>
+  <h2 class="section-title reveal">De <em>waarheid</em><br>achter fast fashion</h2>
+  <p class="impact-intro reveal">
+    Fast fashion heeft een enorme impact op het milieu. Bekijk de feiten en begrijp waarom bewuste keuzes zo belangrijk zijn.
+  </p>
+  <div class="impact-grid reveal">
+    <div class="impact-item">
+      <div class="impact-num">10%</div>
+      <div class="impact-label">van alle wereldwijde CO₂-uitstoot komt van de mode-industrie</div>
+      <div class="impact-fact">Meer dan alle internationale vluchten en scheepvaart samen</div>
+    </div>
+    <div class="impact-item">
+      <div class="impact-num">92M</div>
+      <div class="impact-label">ton kledingafval per jaar wereldwijd</div>
+      <div class="impact-fact">Genoeg om elke seconde een vrachtwagen te vullen</div>
+    </div>
+    <div class="impact-item">
+      <div class="impact-num">700L</div>
+      <div class="impact-label">water nodig voor één katoenen T-shirt</div>
+      <div class="impact-fact">Genoeg drinkwater voor 2,5 jaar voor één persoon</div>
+    </div>
+  </div>
+  <div class="impact-timeline reveal">
+    <h3 class="timeline-title">De opkomst van fast fashion</h3>
+    <div class="timeline">
+      <div class="timeline-item">
+        <span class="timeline-year">1990s</span>
+        <span class="timeline-desc">Fast fashion merken zoals <strong>H&M en Zara</strong> beginnen met wekelijkse collecties — veel meer dan de traditionele 2 per jaar.</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2000s</span>
+        <span class="timeline-desc">Online winkelen explodeert. Kleding wordt <strong>52× goedkoper</strong> in gemiddelde levensduur per kledingstuk.</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2013</span>
+        <span class="timeline-desc">Rana Plaza gebouw instort in Bangladesh. <strong>1.134 textielarbeiders</strong> omkomen. Wereld schrikt wakker.</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2020s</span>
+        <span class="timeline-desc">Gen Z eist verandering. <strong>Duurzame mode</strong> groeit met 20% per jaar. Tweedehands en swapping worden mainstream.</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2026</span>
+        <span class="timeline-desc">EU-wetgeving verplicht <strong>transparantie in supply chains</strong>. Merken moeten hun ecologische voetafdruk publiceren.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tips">
+  <p class="section-tag reveal">Duurzame Gids</p>
+  <h2 class="section-title reveal">Herken <em>duurzame</em><br>kleding</h2>
+  <p class="tips-desc reveal">
+    Met deze zes tips herken je duurzame kleding en maak je bewustere keuzes — zonder je stijl in te leveren.
+  </p>
+  <div class="tips-grid reveal">
+    <div class="tip-card">
+      <div class="tip-number">01</div>
+      <div class="tip-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg></div>
+      <h3 class="tip-title">Check het label</h3>
+      <p class="tip-text">Kijk op het waskaartje naar materialen. Biologisch katoen, linnen, Tencel en wol zijn duurzamere keuzes dan polyester of viscose.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-number">02</div>
+      <div class="tip-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+      <h3 class="tip-title">Zoek naar keurmerken</h3>
+      <p class="tip-text">GOTS, Fair Trade, OEKO-TEX en Cradle to Cradle zijn betrouwbare certificeringen die aangeven dat kleding aan strenge eisen voldoet.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-number">03</div>
+      <div class="tip-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div>
+      <h3 class="tip-title">Onderzoek het merk</h3>
+      <p class="tip-text">Gebruik onze merkdatabase of sites als Good On You om te controleren hoe transparant een merk is over zijn productie en waardenketen.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-number">04</div>
+      <div class="tip-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2h4"/><path d="M12 14v-4"/><circle cx="12" cy="14" r="8"/></svg></div>
+      <h3 class="tip-title">Denk aan levensduur</h3>
+      <p class="tip-text">Een duurder kledingstuk dat 10 jaar meegaat is duurzamer dan goedkope fast fashion die na 5 wasbeurten kapot gaat. Kwaliteit telt.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-number">05</div>
+      <div class="tip-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/><path d="m14 16-3 3 3 3"/><path d="M8.293 13.596 7.196 9.5 3.1 10.598"/><path d="m9.344 5.811 1.093-1.892A1.83 1.83 0 0 1 11.985 3a1.784 1.784 0 0 1 1.546.888l3.943 6.843"/><path d="m13.378 9.633 4.096 1.098 1.097-4.096"/></svg></div>
+      <h3 class="tip-title">Kies tweedehands</h3>
+      <p class="tip-text">Vintage, kringloop en swapping zijn de meest duurzame opties. Geen nieuwe grondstoffen, geen transport, minder water en CO₂.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-number">06</div>
+      <div class="tip-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></div>
+      <h3 class="tip-title">Vraag jezelf af...</h3>
+      <p class="tip-text">Draag ik dit minstens 30 keer? Past het bij wat ik al heb? Koop ik het om een gevoel te vullen? Bewuste vragen = bewuste keuzes.</p>
+    </div>
+  </div>
+</section>
+
+<div class="palette-strip">
+  <div style="background: #3e2820;"></div>
+  <div style="background: #e8e4dc;"></div>
+  <div style="background: #c87890;"></div>
+  <div style="background: #efe8d8;"></div>
+  <div style="background: #6a7840;"></div>
+  <div style="background: #6a7840;"></div>
+  <div style="background: #8a9e7a;"></div>
+  <div style="background: #8a9e7a;"></div>
+  <div style="background: #3e2820;"></div>
+  <div style="background: #e8e4dc;"></div>
+</div>
+
+<footer>
+  <div>
+    <div class="footer-brand">Eco <span>Fashion</span></div>
+    <p class="footer-tagline">Fashion zonder footprint. Eco Fashion is een project van Sint Lucas studenten voor de MD-Week 2026 — Duurzame Fashion.</p>
+  </div>
+  <div>
+    <p class="footer-col-title">Navigatie</p>
+    <ul class="footer-links">
+      <li><a href="#checker">Outfit Checker</a></li>
+      <li><a href="#brands">Merk Database</a></li>
+      <li><a href="#community">Community</a></li>
+      <li><a href="#impact">Fast Fashion Impact</a></li>
+      <li><a href="#tips">Duurzame Tips</a></li>
+    </ul>
+  </div>
+  <div>
+    <p class="footer-col-title">Kleurentrend</p>
+    <ul class="footer-links">
+      <li><a href="#">Spring/Summer 2026</a></li>
+      <li><a href="#">Acacia · Marina · Muskmelon</a></li>
+      <li><a href="#">Dusty Rose · Sage Green</a></li>
+      <li><a href="#">Burnished Lilac · Angora</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <p>© 2026 Eco Fashion — MD-Week Project Sint Lucas</p>
+  <p>Duurzame Fashion · Interactieve Beleving</p>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
