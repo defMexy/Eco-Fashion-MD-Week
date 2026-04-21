@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oi&family=Poiret+One&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
@@ -74,7 +74,7 @@
     </div>
   </div>
   <div class="hero-right">
-    <img src="mud-jeans-1.png" alt="Duurzame denim - MUD Jeans Earth Day campagne" class="hero-img" />
+    <img src="assets/images/hero-banner.png" alt="Vrouw in duurzame linnen blouse en wijde broek tegen naturel achtergrond" class="hero-img" />
   </div>
 </section>
 
@@ -121,6 +121,35 @@
         <p>Meer inzicht in merken, materialen en keurmerken, zodat je kleding koopt die je écht draagt én die de planeet spaart.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="posters">
+  <p class="section-tag reveal">Onze Posters</p>
+  <h2 class="section-title reveal">De <em>boodschap</em><br>in beeld</h2>
+  <div class="posters-grid reveal">
+    <div class="poster-card">
+      <img src="assets/images/poster-eco-brands.png" alt="Eco friendly clothing brands poster" class="lightbox-trigger" />
+      <p class="poster-caption">Eco-vriendelijke kledingmerken</p>
+    </div>
+    <div class="poster-card">
+      <img src="assets/images/poster-shein.png" alt="Stop fast fashion - SHEIN poster" class="lightbox-trigger" />
+      <p class="poster-caption">Stop fast fashion</p>
+    </div>
+    <div class="poster-card">
+      <img src="assets/images/poster-planet.png" alt="There is no planet B - kies voor kleding die de aarde respecteert" class="lightbox-trigger" />
+      <p class="poster-caption">There is no planet B</p>
+    </div>
+  </div>
+</section>
+
+<section id="merken-spotlight">
+  <p class="section-tag reveal">Merk Spotlight</p>
+  <h2 class="section-title reveal"><em>MUD Jeans</em> - circulair denim</h2>
+  <p class="tips-desc reveal">MUD Jeans is een van de meest duurzame denimmerken ter wereld. Hun circulaire model maakt het mogelijk jeans te leasen én terug te geven voor recycling.</p>
+  <div class="spotlight-imgs reveal">
+    <img src="assets/images/mud-jeans-1.png" alt="MUD Jeans website" class="lightbox-trigger" />
+    <img src="assets/images/mud-jeans-2.png" alt="MUD Jeans missie" class="lightbox-trigger" />
   </div>
 </section>
 
@@ -197,7 +226,7 @@
     <button class="btn-check" onclick="checkSustainability()">Bereken duurzaamheidsscore →</button>
     <div class="result-box" id="resultBox">
       <div class="result-score-label">Jouw duurzaamheidsscore</div>
-      <div class="result-score" id="resultScore">—</div>
+      <div class="result-score" id="resultScore">0.0/10</div>
       <div class="result-bar-track">
         <div class="result-bar-fill" id="resultBar" style="width: 0%"></div>
       </div>
@@ -225,6 +254,37 @@
     <div class="brands-grid" id="brandsGrid"></div>
     <div style="text-align: center; margin-top: 24px;">
       <button class="search-btn" id="loadMoreBtn" onclick="loadMoreBrands()">Laad meer</button>
+    </div>
+  </div>
+</section>
+
+<section id="rankings">
+  <div class="rankings-inner">
+    <div class="rankings-top reveal">
+      <div>
+        <p class="section-tag">Foto Ranking</p>
+        <h2 class="section-title">Bekijk de<br><em>outfit rankings</em></h2>
+      </div>
+      <p class="rankings-desc">
+        Bekijk kledingfoto’s uit de map en zie direct hoe duurzaam het merk scoort. De stijl sluit aan op de merkdatabase, zodat alles één geheel blijft.
+      </p>
+    </div>
+
+    <div class="search-bar reveal">
+      <input
+              type="text"
+              class="search-input"
+              id="rankingSearch"
+              placeholder="Zoek op merk, type of doelgroep... bijv. Nudie, vrouw, man"
+              oninput="filterRankings()"
+      />
+      <button class="search-btn" onclick="filterRankings()">Zoeken</button>
+    </div>
+
+    <div class="rankings-grid" id="rankingsGrid"></div>
+
+    <div style="text-align: center; margin-top: 24px;">
+      <button class="search-btn" id="loadMoreRankingsBtn" onclick="loadMoreRankings()">Laad meer</button>
     </div>
   </div>
 </section>
@@ -456,31 +516,6 @@
   </div>
 </section>
 
-<section id="merken-spotlight">
-  <p class="section-tag reveal">Merk Spotlight</p>
-  <h2 class="section-title reveal"><em>MUD Jeans</em> - circulair denim</h2>
-  <p class="tips-desc reveal">MUD Jeans is een van de meest duurzame denimmerken ter wereld. Hun circulaire model maakt het mogelijk jeans te leasen én terug te geven voor recycling.</p>
-  <div class="spotlight-imgs reveal">
-    <img src="mud-jeans-1.png" alt="MUD Jeans website" class="lightbox-trigger" />
-    <img src="mud-jeans-2.png" alt="MUD Jeans missie" class="lightbox-trigger" />
-  </div>
-</section>
-
-<section id="posters">
-  <p class="section-tag reveal">Onze Posters</p>
-  <h2 class="section-title reveal">De <em>boodschap</em><br>in beeld</h2>
-  <div class="posters-grid reveal">
-    <div class="poster-card">
-      <img src="poster-eco-brands.png" alt="Eco friendly clothing brands poster" class="lightbox-trigger" />
-      <p class="poster-caption">Eco-vriendelijke kledingmerken</p>
-    </div>
-    <div class="poster-card">
-      <img src="poster-shein.png" alt="Stop fast fashion - SHEIN poster" class="lightbox-trigger" />
-      <p class="poster-caption">Stop fast fashion</p>
-    </div>
-  </div>
-</section>
-
 <footer>
   <div>
     <div class="footer-brand">Eco <span>Fashion</span></div>
@@ -490,6 +525,8 @@
     <p class="footer-col-title">Navigatie</p>
     <ul class="footer-links">
       <li><a href="#concept">Over het concept</a></li>
+      <li><a href="#posters">Onze Posters</a></li>
+      <li><a href="#merken-spotlight">MUD Jeans Spotlight</a></li>
       <li><a href="#checker">Outfit Checker</a></li>
       <li><a href="#brands">Merk Database</a></li>
       <li><a href="#community">Community</a></li>
@@ -530,6 +567,6 @@
   <img class="lightbox-img" id="lightboxImg" src="" alt="" onclick="event.stopPropagation()" />
 </div>
 
-<script src="script.js"></script>
+<script src="assets/js/script.js"></script>
 </body>
 </html>
