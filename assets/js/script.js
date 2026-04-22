@@ -131,7 +131,7 @@ const brands = [
 
 let visibleBrands = 8;
 const brandsPerLoad = 8;
-let currentBrandResults = [...brands];
+let currentBrandResults = [...brands].sort((a, b) => b.score - a.score);
 
 function renderBrands(list) {
     const grid = document.getElementById('brandsGrid');
@@ -167,9 +167,9 @@ function renderBrands(list) {
 function filterBrands() {
     const q = document.getElementById('brandSearch').value.toLowerCase();
 
-    currentBrandResults = q
+    currentBrandResults = (q
         ? brands.filter(b => b.name.toLowerCase().includes(q) || b.cat.toLowerCase().includes(q))
-        : [...brands];
+        : [...brands]).sort((a, b) => b.score - a.score);
 
     visibleBrands = 8;
     renderBrands(currentBrandResults);
@@ -324,12 +324,192 @@ const rankingPhotos = [
         badge: 'badge-great',
         color: '#2e7a9a',
         desc: 'Een hoog scorend merk dat goed laat zien wat duurzame fashion kan zijn.'
+    },
+    {
+        brand: 'Kings of Indigo',
+        type: 'Man',
+        file: 'assets/images/kleding/Kings man 1.png',
+        score: 8.5,
+        label: 'Top',
+        badge: 'badge-great',
+        color: '#8a9a3c',
+        desc: 'Hoogwaardige denim met sterke duurzaamheidsscore.'
+    },
+    {
+        brand: 'Kings of Indigo',
+        type: 'Man',
+        file: 'assets/images/kleding/Kings man 2.png',
+        score: 8.5,
+        label: 'Top',
+        badge: 'badge-great',
+        color: '#8a9a3c',
+        desc: 'Kings of Indigo combineert stijl met verantwoorde productie.'
+    },
+    {
+        brand: 'Kings of Indigo',
+        type: 'Vrouw',
+        file: 'assets/images/kleding/Kings vrouw 1.png',
+        score: 8.5,
+        label: 'Top',
+        badge: 'badge-great',
+        color: '#8a9a3c',
+        desc: 'Duurzame denim voor vrouwen met hoge milieunormen.'
+    },
+    {
+        brand: 'Kings of Indigo',
+        type: 'Vrouw',
+        file: 'assets/images/kleding/Kings vrouw 2.png',
+        score: 8.5,
+        label: 'Top',
+        badge: 'badge-great',
+        color: '#8a9a3c',
+        desc: 'Een sterke keuze voor wie stijlvol en duurzaam wil dragen.'
+    },
+    {
+        brand: 'Teym',
+        type: 'Man',
+        file: 'assets/images/kleding/Teym man 1.png',
+        score: 8.0,
+        label: 'Top',
+        badge: 'badge-great',
+        color: '#8a9a3c',
+        desc: 'Minimalistische basics met focus op duurzame materialen.'
+    },
+    {
+        brand: 'Teym',
+        type: 'Man',
+        file: 'assets/images/kleding/Teym man 2.png',
+        score: 8.0,
+        label: 'Top',
+        badge: 'badge-great',
+        color: '#8a9a3c',
+        desc: 'Teym scoort goed op transparantie en materiaalgebruik.'
+    },
+    {
+        brand: 'Teym',
+        type: 'Vrouw',
+        file: 'assets/images/kleding/Teym vrouw 1.png',
+        score: 8.0,
+        label: 'Top',
+        badge: 'badge-great',
+        color: '#8a9a3c',
+        desc: 'Tijdloze basics die lang meegaan en bewust zijn geproduceerd.'
+    },
+    {
+        brand: 'Teym',
+        type: 'Vrouw',
+        file: 'assets/images/kleding/Teym vrouw 2.png',
+        score: 8.0,
+        label: 'Top',
+        badge: 'badge-great',
+        color: '#8a9a3c',
+        desc: 'Duurzame essentials die perfect passen in een bewuste garderobe.'
+    },
+    {
+        brand: 'Wunderwerk',
+        type: 'Man',
+        file: 'assets/images/kleding/Wunderwerk man 1.png',
+        score: 8.2,
+        label: 'Top',
+        badge: 'badge-great',
+        color: '#8a9a3c',
+        desc: 'Duurzame mode met aandacht voor eerlijke productieketens.'
+    },
+    {
+        brand: 'Wunderwerk',
+        type: 'Man',
+        file: 'assets/images/kleding/Wunderwerk man 2.png',
+        score: 8.2,
+        label: 'Top',
+        badge: 'badge-great',
+        color: '#8a9a3c',
+        desc: 'Wunderwerk bewijst dat stijl en duurzaamheid samengaan.'
+    },
+    {
+        brand: 'Wunderwerk',
+        type: 'Vrouw',
+        file: 'assets/images/kleding/Wunderwerk vrouw 1.png',
+        score: 8.2,
+        label: 'Top',
+        badge: 'badge-great',
+        color: '#8a9a3c',
+        desc: 'Bewust geproduceerde kleding met een hoge duurzaamheidsscore.'
+    },
+    {
+        brand: 'Wunderwerk',
+        type: 'Vrouw',
+        file: 'assets/images/kleding/Wunderwerk vrouw 2.png',
+        score: 8.2,
+        label: 'Top',
+        badge: 'badge-great',
+        color: '#8a9a3c',
+        desc: 'Een solide keuze voor duurzame fashion met goede kwaliteit.'
+    },
+    {
+        brand: 'Patagonia',
+        type: 'Man',
+        file: 'assets/images/kleding/patagonia man 1.png',
+        score: 9.1,
+        label: 'Top',
+        badge: 'badge-great',
+        color: '#8a9a3c',
+        desc: 'Patagonia is een pionier in duurzame outdoor- en streetwear.'
+    },
+    {
+        brand: 'Patagonia',
+        type: 'Man',
+        file: 'assets/images/kleding/patagonia man 2.png',
+        score: 9.1,
+        label: 'Top',
+        badge: 'badge-great',
+        color: '#8a9a3c',
+        desc: 'Hoge score op milieu, eerlijk werk en circulaire principes.'
+    },
+    {
+        brand: 'Patagonia',
+        type: 'Vrouw',
+        file: 'assets/images/kleding/patagonia vrouw 1.png',
+        score: 9.1,
+        label: 'Top',
+        badge: 'badge-great',
+        color: '#8a9a3c',
+        desc: 'Een van de meest duurzame merken ter wereld.'
+    },
+    {
+        brand: 'Patagonia',
+        type: 'Vrouw',
+        file: 'assets/images/kleding/patagonia vrouw 2.png',
+        score: 9.1,
+        label: 'Top',
+        badge: 'badge-great',
+        color: '#8a9a3c',
+        desc: 'Patagonia zet de standaard voor verantwoorde modeproductie.'
+    },
+    {
+        brand: 'Skot',
+        type: 'Man',
+        file: 'assets/images/kleding/skot man 1.png',
+        score: 7.9,
+        label: 'Goed',
+        badge: 'badge-great',
+        color: '#2e7a9a',
+        desc: 'Duurzame overhemden met aandacht voor materiaal en productie.'
+    },
+    {
+        brand: 'Skot',
+        type: 'Man',
+        file: 'assets/images/kleding/skot man 2.png',
+        score: 7.9,
+        label: 'Goed',
+        badge: 'badge-great',
+        color: '#2e7a9a',
+        desc: 'Skot maakt bewuste keuzes in de productieketen.'
     }
 ];
 
 let visibleRankings = 6;
 const rankingsPerLoad = 6;
-let currentRankingResults = [...rankingPhotos];
+let currentRankingResults = [...rankingPhotos].sort((a, b) => b.score - a.score);
 
 function renderRankings(list) {
     const grid = document.getElementById('rankingsGrid');
@@ -378,13 +558,13 @@ function renderRankings(list) {
 function filterRankings() {
     const q = document.getElementById('rankingSearch').value.toLowerCase();
 
-    currentRankingResults = q
+    currentRankingResults = (q
         ? rankingPhotos.filter(item =>
             item.brand.toLowerCase().includes(q) ||
             item.type.toLowerCase().includes(q) ||
             item.file.toLowerCase().includes(q)
         )
-        : [...rankingPhotos];
+        : [...rankingPhotos]).sort((a, b) => b.score - a.score);
 
     visibleRankings = 6;
     renderRankings(currentRankingResults);
@@ -439,6 +619,85 @@ function vote(btn, idx) {
 }
 
 renderOutfits();
+
+// Brand autocomplete
+(function() {
+    const input = document.getElementById('brandInput');
+    const list = document.getElementById('brandSuggestions');
+    let activeIdx = -1;
+
+    function scoreColor(b) {
+        if (b.score >= 7.5) return '#8a9a3c';
+        if (b.score >= 5) return '#b85a30';
+        return '#c45070';
+    }
+
+    function show(matches) {
+        activeIdx = -1;
+        if (!matches.length) { list.classList.remove('open'); return; }
+        list.innerHTML = matches.slice(0, 6).map(b => `
+            <li data-name="${b.name}">
+                <span>${b.name} <small style="opacity:0.45;font-size:0.78rem;">${b.cat}</small></span>
+                <span class="autocomplete-score" style="background:${scoreColor(b)}22;color:${scoreColor(b)}">${b.score}</span>
+            </li>`).join('');
+        list.classList.add('open');
+        list.querySelectorAll('li').forEach(li => {
+            li.addEventListener('mousedown', e => {
+                e.preventDefault();
+                input.value = li.dataset.name;
+                list.classList.remove('open');
+            });
+        });
+    }
+
+    input.addEventListener('input', () => {
+        const q = input.value.toLowerCase().trim();
+        if (!q) { list.classList.remove('open'); return; }
+        show(brands.filter(b => b.name.toLowerCase().includes(q)));
+    });
+
+    input.addEventListener('keydown', e => {
+        const items = list.querySelectorAll('li');
+        if (!items.length) return;
+        if (e.key === 'ArrowDown') { activeIdx = Math.min(activeIdx + 1, items.length - 1); }
+        else if (e.key === 'ArrowUp') { activeIdx = Math.max(activeIdx - 1, 0); }
+        else if (e.key === 'Enter' && activeIdx >= 0) {
+            input.value = items[activeIdx].dataset.name;
+            list.classList.remove('open'); return;
+        } else if (e.key === 'Escape') { list.classList.remove('open'); return; }
+        items.forEach((li, i) => li.classList.toggle('active', i === activeIdx));
+    });
+
+    document.addEventListener('click', e => {
+        if (!input.parentElement.contains(e.target)) list.classList.remove('open');
+    });
+})();
+
+// Custom select: wearFreq
+(function() {
+    const dropdown = document.getElementById('wearFreqDropdown');
+    const trigger = document.getElementById('wearFreqTrigger');
+    const label = document.getElementById('wearFreqLabel');
+    const options = document.querySelectorAll('#wearFreqOptions .custom-select-option');
+    const hidden = document.getElementById('wearFreq');
+
+    trigger.addEventListener('click', () => dropdown.classList.toggle('open'));
+
+    options.forEach(opt => {
+        opt.addEventListener('click', () => {
+            options.forEach(o => o.classList.remove('selected'));
+            opt.classList.add('selected');
+            hidden.value = opt.dataset.value;
+            label.textContent = opt.childNodes[0].textContent.trim();
+            label.style.color = 'var(--cream)';
+            dropdown.classList.remove('open');
+        });
+    });
+
+    document.addEventListener('click', e => {
+        if (!dropdown.contains(e.target)) dropdown.classList.remove('open');
+    });
+})();
 
 let currentRating = 0;
 function setRating(val) {

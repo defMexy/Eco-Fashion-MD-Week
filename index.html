@@ -141,6 +141,10 @@
       <img src="assets/images/poster-planet.png" alt="There is no planet B - kies voor kleding die de aarde respecteert" class="lightbox-trigger" />
       <p class="poster-caption">There is no planet B</p>
     </div>
+    <div class="poster-card">
+      <img src="assets/images/poster-md-week.png" alt="Treat yourself to a safe future and wear eco friendly fashion" class="lightbox-trigger" />
+      <p class="poster-caption">Treat yourself to a safe future</p>
+    </div>
   </div>
 </section>
 
@@ -180,7 +184,10 @@
     <h3>Beoordeel jouw outfit</h3>
     <div class="form-group">
       <label class="form-label">Merk</label>
-      <input type="text" class="form-input" placeholder="bijv. Zara, H&M, Patagonia..." id="brandInput" />
+      <div class="autocomplete-wrap">
+        <input type="text" class="form-input" placeholder="bijv. Zara, H&M, Patagonia..." id="brandInput" autocomplete="off" />
+        <ul class="autocomplete-list" id="brandSuggestions"></ul>
+      </div>
     </div>
     <div class="form-group">
       <label class="form-label">Materiaal</label>
@@ -197,13 +204,19 @@
     </div>
     <div class="form-group">
       <label class="form-label">Hoe vaak draag je het?</label>
-      <select class="form-select" id="wearFreq">
-        <option value="">Selecteer...</option>
-        <option value="1">Zelden (1-2x per jaar)</option>
-        <option value="4">Soms (1x per maand)</option>
-        <option value="7">Regelmatig (1x per week)</option>
-        <option value="9">Heel vaak (meerdere keren per week)</option>
-      </select>
+      <div class="custom-select" id="wearFreqDropdown">
+        <div class="custom-select-trigger" id="wearFreqTrigger">
+          <span id="wearFreqLabel">Selecteer...</span>
+          <svg class="custom-select-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="custom-select-options" id="wearFreqOptions">
+          <div class="custom-select-option" data-value="1">Zelden <span class="option-sub">1-2x per jaar</span></div>
+          <div class="custom-select-option" data-value="4">Soms <span class="option-sub">1x per maand</span></div>
+          <div class="custom-select-option" data-value="7">Regelmatig <span class="option-sub">1x per week</span></div>
+          <div class="custom-select-option" data-value="9">Heel vaak <span class="option-sub">meerdere keren per week</span></div>
+        </div>
+        <input type="hidden" id="wearFreq" value="">
+      </div>
     </div>
     <div class="form-group">
       <label class="form-label">Productieplaats</label>

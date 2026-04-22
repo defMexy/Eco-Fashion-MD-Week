@@ -20,8 +20,8 @@ De site helpt je merken beoordelen, je outfit te checken op duurzaamheid en geef
 | **Concept** | Doel, naam en opbrengst van het project |
 | **Posters** | Visueel werk van de groep (lightbox) |
 | **MUD Jeans** | Spotlight op duurzaam Nederlands merk |
-| **Outfit Checker** | Vragen over materiaal, merk en gebruik → score 1–10 |
-| **Merk Database** | 49 merken met duurzaamheidsscore |
+| **Outfit Checker** | Vragen over materiaal, merk en gebruik → score 1–10, met merkautocomplete |
+| **Merk Database** | 49 merken met duurzaamheidsscore, gesorteerd hoog naar laag |
 | **Community** | Outfits delen, stemmen en reageren |
 | **Fast Fashion Impact** | Statistieken en tijdlijn |
 | **Duurzame Tips** | 6 tips om duurzame kleding te herkennen |
@@ -37,6 +37,9 @@ De site helpt je merken beoordelen, je outfit te checken op duurzaamheid en geef
 - Responsive met hamburger menu op mobiel
 - Lightbox voor alle foto's en posters
 - Scroll-animaties via Intersection Observer
+- Custom dropdown voor draagfrequentie (geen native select)
+- Merkautocomplete met live score-indicatie
+- Foto rankings gesorteerd op duurzaamheidsscore (hoog naar laag)
 
 ### Bestanden
 
@@ -49,11 +52,15 @@ assets/
     script.js
   images/
     hero-banner.png
+    logo.png
     poster-eco-brands.png
     poster-shein.png
     poster-planet.png
     mud-jeans-1.png
     mud-jeans-2.png
+    kleding/
+      (foto's per merk: Kings of Indigo, Teym, Wunderwerk, Patagonia,
+       Skot, Nudie Jeans, Thinking MU, Zeeman, Alchemist & Thought)
 ```
 
 ### Fonts
